@@ -4,15 +4,64 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "yarn run tslint && yarn run tsc-test && yarn run jest",
+    "tslint": "tslint --project .",
+    "tsc-test": "tsc --project . --noEmit",
+    "jest": "jest"
   },
   "dependencies": {
     "expo": "^32.0.0",
     "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.3"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "@types/expo": "^31.0.6",
+    "@types/jest": "^23.3.11",
+    "@types/lodash": "^4.14.119",
+    "@types/react": "^16.7.18",
+    "@types/react-redux": "^6.0.12",
+    "@types/react-test-renderer": "^16.0.3",
+    "@types/redux-logger": "^3.0.6",
+    "@types/styled-components": "^4.1.4",
+    "jest": "^23.6.0",
+    "jest-expo": "^32.0.0",
+    "react-test-renderer": "^16.7.0",
+    "redux-devtools": "^3.5.0",
+    "redux-devtools-log-monitor": "^1.4.0",
+    "redux-logger": "^3.0.6",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typesafe-actions": "^3.0.0",
+    "typescript": "^3.2.2"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "tsx"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": {
+          "jsx": "react"
+        }
+      }
+    }
   },
   "private": true
 }
