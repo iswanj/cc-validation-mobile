@@ -89,6 +89,19 @@ export default class Home extends React.Component<IHomeProps> {
     frmErrors: {}
   };
 
+  private name: any;
+  private cardno: any;
+  private date: any;
+  private ccv: any;
+
+  constructor(props: IHomeProps) {
+    super(props);
+    this.name = React.createRef();
+    this.cardno = React.createRef();
+    this.date = React.createRef();
+    this.ccv = React.createRef();
+  }
+
   public render() {
     const { frmPayment, frmErrors, isShowLoading } = this.props;
     return (
@@ -121,45 +134,58 @@ export default class Home extends React.Component<IHomeProps> {
                         error={frmErrors.price}
                         value={frmPayment.price}
                         keyboardType="decimal-pad"
+                        returnKeyType="next"
+                        onSubmitEditing={() => this.name.current.focus()}
                       />
                     </InputGroup>
                     <InputGroup>
                       <TextInput
                         name="name"
+                        ref={this.name}
                         onChange={this.handleInputChange}
                         label="Name on Card"
                         error={frmErrors.name}
                         value={frmPayment.name}
+                        returnKeyType="next"
+                        onSubmitEditing={() => this.cardno.current.focus()}
                       />
                     </InputGroup>
                     <InputGroup>
                       <TextInput
                         name="cardNumber"
+                        ref={this.cardno}
                         onChange={this.handleInputChange}
                         renderIcon={this.renderIcon}
                         label="Card Number"
                         error={frmErrors.cardNumber}
                         value={frmPayment.cardNumber}
                         keyboardType="numeric"
+                        returnKeyType="next"
+                        onSubmitEditing={() => this.date.current.focus()}
                       />
                     </InputGroup>
                     <InputGroup>
                       <TextInput
                         name="expireDate"
+                        ref={this.date}
                         onChange={this.handleInputChange}
                         label="MM/YY"
                         error={frmErrors.expireDate}
                         value={frmPayment.expireDate}
+                        returnKeyType="next"
+                        onSubmitEditing={() => this.ccv.current.focus()}
                       />
                     </InputGroup>
                     <InputGroup>
                       <TextInput
                         name="ccv"
+                        ref={this.ccv}
                         onChange={this.handleInputChange}
                         label="CCV"
                         error={frmErrors.ccv}
                         value={frmPayment.ccv}
                         keyboardType="numeric"
+                        onSubmitEditing={this.handleCheckout}
                       />
                     </InputGroup>
                     <ButtonContainer>
