@@ -3,13 +3,121 @@
 exports[`App snapshot test 1`] = `
 <View
   style={
-    Object {
-      "marginTop": 50,
-    }
+    Array [
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "flexGrow": 1,
+        "marginTop": 42,
+      },
+      undefined,
+    ]
   }
 >
-  <Text>
-    Hello Expo!
-  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "display": "flex",
+          "flexDirection": "row",
+          "flexGrow": 1,
+          "flexWrap": "wrap",
+          "justifyContent": "flex-start",
+        },
+        undefined,
+      ]
+    }
+  >
+    <View
+      span={1}
+      style={
+        Array [
+          Object {
+            "flexBasis": 0,
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "marginBottom": 0,
+            "marginLeft": "auto",
+            "marginRight": "auto",
+            "marginTop": 0,
+            "position": "relative",
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "display": "flex",
+              "flexDirection": "column",
+              "flexGrow": 1,
+            },
+            undefined,
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "borderBottomColor": "#ccc",
+                "borderBottomWidth": 1,
+                "justifyContent": "center",
+                "paddingBottom": 15,
+                "paddingLeft": 15,
+                "paddingRight": 15,
+                "paddingTop": 15,
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#333",
+                  "fontSize": 22,
+                  "fontWeight": "400",
+                },
+                undefined,
+              ]
+            }
+          >
+            Payment Details
+          </Text>
+        </View>
+        <Image
+          source={
+            Object {
+              "uri": "../../img/visa.png",
+            }
+          }
+          style={
+            Object {
+              "height": 24,
+              "width": 24,
+            }
+          }
+        />
+        <View
+          onLayout={[Function]}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Object {
+                "paddingBottom": 0,
+              },
+            ]
+          }
+        />
+      </View>
+    </View>
+  </View>
 </View>
 `;
